@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入 - Google 帳戶</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='90' font-family='Arial, sans-serif' font-weight='bold' fill='%234285F4'>G</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,26 +13,28 @@
         <div class="login-layout-wrapper">
             <div class="login-info-column">
                 <div class="google-logo">
-                    <span class="logo-g1">G</span>
-                    <span class="logo-o">o</span>
-                    <span class="logo-o2">o</span>
-                    <span class="logo-g2">g</span>
-                    <span class="logo-l">l</span>
-                    <span class="logo-e">e</span>
+                    <span class="logo-g1">G</span><span class="logo-o">o</span><span class="logo-o2">o</span><span class="logo-g2">g</span><span class="logo-l">l</span><span class="logo-e">e</span>
                 </div>
                 <h1 class="title">登入</h1>
-                <p class="subtitle">使用您的 Google 帳戶</p>
+                <p class="subtitle">使用你的 Google 帳戶</p>
             </div>
             <div class="login-form-column">
                 <form id="loginForm" action="#" method="post">
+                    <div id="formGlobalError" role="alert" style="display: none;"></div>
                     <div class="input-wrapper">
                         <input type="text" id="identifier" name="identifier" placeholder=" " required aria-label="電子郵件地址或電話號碼">
                         <label for="identifier" class="floating-label">電子郵件地址或電話號碼</label>
                     </div>
-                    <div class="action-link">
+                    <div class="error-message" id="identifierError" role="alert" aria-live="assertive"></div>
+                    <div class="input-wrapper" id="passwordWrapper" style="display: none; margin-top: 20px;">
+                        <input type="password" id="password" name="password" placeholder=" " required aria-label="輸入您的密碼">
+                        <label for="password" class="floating-label">輸入您的密碼</label>
+                    </div>
+                    <div class="error-message" id="passwordError" role="alert" aria-live="assertive"></div>
+                    <div class="action-link" id="forgotEmailLinkWrapper">
                         <a href="#">忘記電子郵件地址？</a>
                     </div>
-                    <p class="guest-info">
+                    <p class="guest-info" id="guestInfoParagraph">
                         如果這不是你的電腦，請使用訪客模式以私密方式登入。
                         <a href="#">進一步瞭解如何使用訪客模式</a>
                     </p>
@@ -53,11 +56,12 @@
             </div>
             <nav class="footer-links">
                 <a href="#">說明</a>
-                <a href="#">隱私權</a>
+                <a href="#">隱私權設定</a>
                 <a href="#">條款</a>
             </nav>
         </div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
